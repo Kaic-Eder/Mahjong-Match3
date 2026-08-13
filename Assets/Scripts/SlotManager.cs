@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class SlotManager : MonoBehaviour
@@ -12,71 +12,70 @@ public class SlotManager : MonoBehaviour
     [Tooltip("Capacidade máxima da barra de slots")]
     [Range(1, 8)]
     [SerializeField] private int maxSlots = 7;
-    
+    [SerializeField] private float velocidadeMovimento = 12f;
     private List<TileController> currentTiles = new List<TileController>();
     
     /// <summary>
-    /// Tenta adicionar um tile selecionado à barra de slots.
+    /// Tenta adicionar e organizar um Tile na barra de slots.
     /// </summary>
     public bool TryAddTile(TileController tile)
     {
-        // 1. Verifica se a barra já está cheia
         if (currentTiles.Count >= maxSlots)
         {
-            Debug.LogWarning( "A barra de slots está cheia!");
-            Debug.LogWarning( "Parece que voce perdeu");
+            Debug.LogWarning("A barra de slots está cheia! Game Over?");
             return false;
         }
 
-        int insertIndex = GetInsertIndex(tile.TileTypeId);
-        
+        // 1. Descobre em qual índice o tile deve ser inserido
+        int insertIndex = GetInsertionIndex(tile.TileTypeId);
+
+        // 2. Insere o tile na lista na posição correta
         currentTiles.Insert(insertIndex, tile);
 
-        StartCoroutine(ProcessarJogadaRoutine(tile.TileTypeId));
-        
+        // 3. Atualiza a posição visual de TODOS os tiles na barra
+        UpdateTilePositions();
+
+        // 4. Verifica se essa inserção gerou um Match de 3 peças
+        CheckForMatch(tile.TileTypeId);
+
         return true;
     }
-    
-    private IEnumerator ProcessarJogadaRoutine(int typeId)
-    {
-        // PASSO 1: Atualiza e ESPERA a animação de movimento terminar!
-        yield return StartCoroutine(UpdateTilePositionRoutine());
 
-        // PASSO 2: Agora que os tiles pousaram suavemente no slot, checamos o Match!
-        CheckForMatch(typeId);
-    }
-
-    private int GetInsertIndex(int typeId)
+    /// <summary>
+    /// Encontra a posição correta na lista para agrupar tiles de mesmo tipo.
+    /// </summary>
+    private int GetInsertionIndex(int typeId)
     {
+        // Procura do final para o começo pelo último tile do mesmo tipo
         for (int i = currentTiles.Count - 1; i >= 0; i--)
         {
             if (currentTiles[i].TileTypeId == typeId)
             {
-                return i + 1;
+                return i + 1; // Insere logo após o último encontrado
             }
         }
-        
+
+        // Se não encontrou nenhum igual, entra no final da fila
         return currentTiles.Count;
-        
     }
 
-    private IEnumerator UpdateTilePositionRoutine()
+    private void UpdateTilePositions()
     {
-        Coroutine ultimaAnimacao = null;
         for (int i = 0; i < currentTiles.Count; i++)
         {
-            Vector3 destino = slotPositions[i].position;
-            ultimaAnimacao = currentTiles[i].MoverPara(destino);
-        }
-        if (ultimaAnimacao != null)
-        {
-            yield return ultimaAnimacao;
+            // Move instantaneamente para o slot correto (depois faremos a animação)
+            float duration = Vector3.Distance(currentTiles[i].transform.position, slotPositions[i].position)/velocidadeMovimento;
+            currentTiles[i].transform.DOMove(slotPositions[i].transform.position, duration).SetEase(Ease.Linear);
         }
     }
 
+    /// <summary>
+    /// Verifica se há 3 peças do mesmo tipo e processa o Match.
+    /// </summary>
     private void CheckForMatch(int typeId)
     {
-        List<TileController> matchingTiles = new  List<TileController>();
+        // Lista temporária para guardar os tiles correspondentes ao match
+        List<TileController> matchingTiles = new List<TileController>();
 
         foreach (var t in currentTiles)
         {
@@ -86,20 +85,23 @@ public class SlotManager : MonoBehaviour
             }
         }
 
+        // Se encontramos 3 peças do mesmo tipo!
         if (matchingTiles.Count >= 3)
         {
             Debug.Log($"<color=green>MATCH! 3 peças do tipo {typeId} combinadas!</color>");
 
+            // 1. Remove os 3 tiles da nossa lista lógica
             foreach (var tileToRemove in matchingTiles)
             {
                 currentTiles.Remove(tileToRemove);
                 
+                // 2. Destrói o GameObject da cena
                 Destroy(tileToRemove.gameObject);
             }
-            StartCoroutine(UpdateTilePositionRoutine());
-            
+
+            // 3. Reorganiza os tiles que sobraram na barra
+            UpdateTilePositions();
         }
-        
     }
     
     
