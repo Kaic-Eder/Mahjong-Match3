@@ -436,7 +436,8 @@ GameObject:
   m_Component:
   - component: {fileID: 367177095}
   - component: {fileID: 367177097}
-  - component: {fileID: 367177096}
+  - component: {fileID: 367177099}
+  - component: {fileID: 367177098}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -459,29 +460,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 269985666}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &367177096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367177094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3636770fa613b7845b05b255d7827be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotManager
-  slotPositions:
-  - {fileID: 1704943450}
-  - {fileID: 837166235}
-  - {fileID: 355834116}
-  - {fileID: 715809321}
-  - {fileID: 896284736}
-  - {fileID: 670068984}
-  - {fileID: 1010068912}
-  - {fileID: 894524961}
-  maxSlots: 7
-  velocidadeMovimento: 12
 --- !u!114 &367177097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +476,39 @@ MonoBehaviour:
   tileLayer:
     serializedVersion: 2
     m_Bits: 64
-  slotManager: {fileID: 367177096}
+  gameFlow: {fileID: 367177099}
+--- !u!114 &367177098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367177094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2c0f888785d9c479f220bf8003edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrayAnimator
+  slotManager: {fileID: 2099110519}
+  moveSpeed: 12
+  minimumMoveDuration: 0.08
+  matchDuration: 0.25
+--- !u!114 &367177099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367177094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe583a8670b52e24fb05634fbe33ad81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameFlowController
+  slotManager: {fileID: 2099110519}
+  trayAnimator: {fileID: 367177098}
+  matchSize: 3
+  currentState: 1
 --- !u!1001 &419505933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2119,6 +2129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2099110518}
   - component: {fileID: 2099110517}
+  - component: {fileID: 2099110519}
   m_Layer: 0
   m_Name: SlotBar
   m_TagString: Untagged
@@ -2209,6 +2220,28 @@ Transform:
   - {fileID: 894524961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2099110519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099110516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3636770fa613b7845b05b255d7827be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotManager
+  slotPositions:
+  - {fileID: 1704943450}
+  - {fileID: 837166235}
+  - {fileID: 355834116}
+  - {fileID: 715809321}
+  - {fileID: 896284736}
+  - {fileID: 670068984}
+  - {fileID: 1010068912}
+  - {fileID: 894524961}
+  maxSlots: 7
 --- !u!1001 &2142929294
 PrefabInstance:
   m_ObjectHideFlags: 0

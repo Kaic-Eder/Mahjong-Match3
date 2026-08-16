@@ -6,7 +6,7 @@ public class TileInteractionHandler : MonoBehaviour
     [Header("Referências")] 
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask tileLayer;
-    [SerializeField] private SlotManager slotManager;
+    [SerializeField] private GameFlowController gameFlow;
 
     private PlayerControls inputActions;
 
@@ -45,15 +45,25 @@ public class TileInteractionHandler : MonoBehaviour
 
     private void DetectTile(Vector2 screenPosition)
     {
-        Vector3 worldPoint = mainCamera.ScreenToWorldPoint(screenPosition);
-        RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero, Mathf.Infinity, tileLayer);
+        if (gameFlow == null || !gameFlow.CanReceiveInput)
+            return;
 
-        if (hit.collider != null)
-        {
-            TileController tile = hit.transform.gameObject.GetComponent<TileController>();
-            slotManager.TryAddTile(tile);
-            hit.collider.gameObject.GetComponent<Collider2D>().enabled = false;
-        }
+        Vector3 worldPoint = mainCamera.ScreenToWorldPoint(screenPosition);
+        RaycastHit2D hit = Physics2D.Raycast(
+            worldPoint,
+            Vector2.zero,
+            Mathf.Infinity,
+            tileLayer);
+
+        if (!hit.collider)
+            return;
+
+        if (!hit.collider.TryGetComponent(out TileController tile))
+            return;
+
+        // O próprio fluxo decide se a seleção foi aceita.
+        // Não desabilite o collider aqui.
+        gameFlow.TrySelectTile(tile);
     }
     
 }
