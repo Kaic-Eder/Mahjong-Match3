@@ -14,12 +14,14 @@ public class TrayAnimator : MonoBehaviour
     [Header("Match")]
     [SerializeField] private float matchDuration = 0.25f;
 
-    private Sequence activeSequence;
+    private Sequence layoutSequence;
+    private Sequence removalSequence;
 
     public Sequence PlayReflow(IReadOnlyList<TileController> tiles)
     {
-        Sequence sequence = DOTween.Sequence();
+        KillLayoutAnimation();
 
+        Sequence newLayout = DOTween.Sequence();
         bool addedTween = false;
 
         for (int i = 0; i < tiles.Count; i++)
@@ -32,22 +34,55 @@ public class TrayAnimator : MonoBehaviour
             if (!slotManager.TryGetSlotPosition(i, out Vector3 targetPosition))
                 continue;
 
-            float distance = Vector3.Distance(tile.transform.position, targetPosition);
-            float duration = Mathf.Max(minimumMoveDuration, distance / moveSpeed);
+            float distance = Vector3.Distance(
+                tile.transform.position,
+                targetPosition);
+
+            float duration = Mathf.Max(
+                minimumMoveDuration,
+                distance / moveSpeed);
 
             Tween moveTween = tile.transform
                 .DOMove(targetPosition, duration)
                 .SetEase(Ease.OutQuad);
 
-            sequence.Join(moveTween);
+            newLayout.Join(moveTween);
             addedTween = true;
         }
 
-        // Evita deixar uma Sequence vazia quando a barra não tem tiles.
         if (!addedTween)
-            sequence.AppendCallback(() => { });
+        {
+            // Faz uma barra vazia ter uma conclusão previsível.
+            newLayout.AppendCallback(() => { });
+        }
 
-        return sequence;
+        layoutSequence = newLayout;
+
+        newLayout
+            .OnComplete(() =>
+            {
+                if (layoutSequence == newLayout)
+                    layoutSequence = null;
+            })
+            .OnKill(() =>
+            {
+                if (layoutSequence == newLayout)
+                    layoutSequence = null;
+            });
+
+        return newLayout;
+    }
+    
+    public void KillLayoutAnimation()
+    {
+        if (layoutSequence != null && layoutSequence.IsActive())
+        {
+            // false significa: não complete o destino antigo.
+            // O tile fica exatamente onde estava quando o movimento foi interrompido.
+            layoutSequence.Kill(false);
+        }
+
+        layoutSequence = null;
     }
 
     public Sequence PlayMatchRemoval(IReadOnlyList<TileController> matchedTiles)
@@ -65,16 +100,8 @@ public class TrayAnimator : MonoBehaviour
         return sequence;
     }
 
-    public void CancelActiveAnimation()
-    {
-        if (activeSequence != null && activeSequence.IsActive())
-            activeSequence.Kill();
-
-        activeSequence = null;
-    }
-
     private void OnDestroy()
     {
-        CancelActiveAnimation();
+        KillLayoutAnimation();
     }
 }

@@ -17,30 +17,31 @@ public class GameFlowController : MonoBehaviour
     private readonly MatchFinder matchFinder = new MatchFinder();
 
     public GameState CurrentState => currentState;
-    public bool CanReceiveInput => currentState == GameState.WaitingForInput;
+    public bool CanReceiveInput =>
+        currentState != GameState.GameOver &&
+        currentState != GameState.Victory;
 
     public bool TrySelectTile(TileController tile)
     {
         if (!CanReceiveInput)
-        {
-            Debug.Log($"[Flow] Toque ignorado: estado atual é {currentState}.");
-            return false;
-        }
-
-        if (tile == null)
             return false;
 
         if (!slotManager.TryAddTile(tile))
             return false;
 
-        // O tile selecionado não deve poder ser selecionado novamente.
         tile.SetInteractable(false);
 
-        ChangeState(GameState.MovingTileToTray);
+        if (matchFinder.TryFindMatch(
+                slotManager.CurrentTiles,
+                tile.TileTypeId,
+                matchSize,
+                out List<TileController> match))
+        {
+            // A implementação desta separação será a próxima etapa.
+            StartMatchRemoval(match);
+        }
 
-        Sequence entrySequence = trayAnimator.PlayReflow(slotManager.CurrentTiles);
-        entrySequence.OnComplete(() => FinishTileEntry(tile));
-
+        trayAnimator.PlayReflow(slotManager.CurrentTiles);
         return true;
     }
 
