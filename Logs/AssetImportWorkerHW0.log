@@ -2548,3 +2548,170 @@ Memory consumption went from 368.4 MB to 362.1 MB.
 Total: 20.034300 ms (FindLiveObjects: 1.075100 ms CreateObjectMapping: 3.974000 ms MarkObjects: 9.601100 ms  DeleteObjects: 5.382100 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 4.16 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (6.0 MB). Loaded Objects now: 8301.
+Memory consumption went from 370.3 MB to 364.2 MB.
+Total: 19.447100 ms (FindLiveObjects: 1.655300 ms CreateObjectMapping: 3.312800 ms MarkObjects: 8.576900 ms  DeleteObjects: 5.899800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+[Licensing::Client] Successfully resolved entitlement details
+Begin MonoManager ReloadAssembly
+Refreshing native plugins compatible for Editor in 3.59 ms, found 5 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.319 seconds
+Domain Reload Profiling: 3600ms
+	BeginReloadAssembly (550ms)
+		DisableScriptedObjects (118ms)
+		CreateAndSetChildDomain (120ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (121ms)
+	LoadAllAssembliesAndSetupDomain (1556ms)
+		LoadAssemblies (1127ms)
+		AnalyzeDomain (374ms)
+			TypeCache.Refresh (14ms)
+			BuildScriptInfoCaches (347ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1320ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			BeforeProcessingInitializeOnLoad (154ms)
+			ProcessInitializeOnLoadAttributes (534ms)
+			ProcessInitializeOnLoadMethodAttributes (193ms)
+			AfterProcessingInitializeOnLoad (17ms)
+		AwakeInstancesAfterBackupRestoration (33ms)
+Refreshing native plugins compatible for Editor in 4.97 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7372 unused Assets / (6.0 MB). Loaded Objects now: 8304.
+Memory consumption went from 373.4 MB to 367.3 MB.
+Total: 16.616800 ms (FindLiveObjects: 1.249000 ms CreateObjectMapping: 3.618200 ms MarkObjects: 7.718500 ms  DeleteObjects: 4.029300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 30.61 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (4.9 MB). Loaded Objects now: 8304.
+Memory consumption went from 375.3 MB to 370.4 MB.
+Total: 282.398700 ms (FindLiveObjects: 4.652700 ms CreateObjectMapping: 11.722300 ms MarkObjects: 218.133600 ms  DeleteObjects: 47.887700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+[Licensing::Client] Successfully resolved entitlement details
+Begin MonoManager ReloadAssembly
+Refreshing native plugins compatible for Editor in 4.47 ms, found 5 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.585 seconds
+Domain Reload Profiling: 3926ms
+	BeginReloadAssembly (1084ms)
+		DisableScriptedObjects (33ms)
+		CreateAndSetChildDomain (165ms)
+	RebuildCommonClasses (14ms)
+	RebuildNativeTypeToScriptingClass (28ms)
+	initialDomainReloadingComplete (122ms)
+	LoadAllAssembliesAndSetupDomain (1090ms)
+		LoadAssemblies (1142ms)
+		AnalyzeDomain (379ms)
+			TypeCache.Refresh (14ms)
+			BuildScriptInfoCaches (353ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1587ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			BeforeProcessingInitializeOnLoad (161ms)
+			ProcessInitializeOnLoadAttributes (674ms)
+			ProcessInitializeOnLoadMethodAttributes (289ms)
+			AfterProcessingInitializeOnLoad (19ms)
+		AwakeInstancesAfterBackupRestoration (44ms)
+Refreshing native plugins compatible for Editor in 4.40 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7372 unused Assets / (6.1 MB). Loaded Objects now: 8307.
+Memory consumption went from 378.6 MB to 372.5 MB.
+Total: 16.987800 ms (FindLiveObjects: 1.097400 ms CreateObjectMapping: 3.376600 ms MarkObjects: 8.291800 ms  DeleteObjects: 4.220300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 11.54 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (6.0 MB). Loaded Objects now: 8307.
+Memory consumption went from 380.5 MB to 374.5 MB.
+Total: 60.920400 ms (FindLiveObjects: 3.212300 ms CreateObjectMapping: 6.476700 ms MarkObjects: 13.958200 ms  DeleteObjects: 37.271200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Refreshing native plugins compatible for Editor in 4.41 ms, found 5 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.748 seconds
+Domain Reload Profiling: 3782ms
+	BeginReloadAssembly (594ms)
+		DisableScriptedObjects (110ms)
+		CreateAndSetChildDomain (112ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (31ms)
+	initialDomainReloadingComplete (118ms)
+	LoadAllAssembliesAndSetupDomain (1274ms)
+		LoadAssemblies (782ms)
+		AnalyzeDomain (444ms)
+			TypeCache.Refresh (17ms)
+			BuildScriptInfoCaches (406ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1750ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			BeforeProcessingInitializeOnLoad (214ms)
+			ProcessInitializeOnLoadAttributes (605ms)
+			ProcessInitializeOnLoadMethodAttributes (296ms)
+			AfterProcessingInitializeOnLoad (23ms)
+		AwakeInstancesAfterBackupRestoration (49ms)
+Refreshing native plugins compatible for Editor in 4.24 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7372 unused Assets / (6.0 MB). Loaded Objects now: 8310.
+Memory consumption went from 383.2 MB to 377.2 MB.
+Total: 17.329400 ms (FindLiveObjects: 1.092100 ms CreateObjectMapping: 3.420300 ms MarkObjects: 8.392300 ms  DeleteObjects: 4.423000 ms)
+
+Prepare: number of updated asset objects reloaded= 0

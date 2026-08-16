@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 
 public class SlotManager : MonoBehaviour
@@ -15,7 +14,7 @@ public class SlotManager : MonoBehaviour
 
     public IReadOnlyList<TileController> CurrentTiles => currentTiles;
     public int MaxSlots => maxSlots;
-    
+
     public bool TryAddTile(TileController tile)
     {
         if (tile == null)
@@ -43,20 +42,6 @@ public class SlotManager : MonoBehaviour
         return true;
     }
 
-    /// <summary>
-    /// Encontra a posição correta na lista para agrupar tiles de mesmo tipo.
-    /// </summary>
-    private int GetInsertionIndex(int typeId)
-    {
-        for (int i = currentTiles.Count - 1; i >= 0; i--)
-        {
-            if (currentTiles[i].TileTypeId == typeId)
-                return i + 1;
-        }
-
-        return currentTiles.Count;
-    }
-    
     public void RemoveTiles(IReadOnlyList<TileController> tilesToRemove)
     {
         if (tilesToRemove == null)
@@ -70,7 +55,7 @@ public class SlotManager : MonoBehaviour
 
         Debug.Log($"[Tray] {tilesToRemove.Count} tile(s) removido(s) da lista.");
     }
-    
+
     public bool TryGetSlotPosition(int index, out Vector3 position)
     {
         if (index >= 0 && index < slotPositions.Length && slotPositions[index] != null)
@@ -83,6 +68,15 @@ public class SlotManager : MonoBehaviour
         Debug.LogError($"Não existe posição configurada para o slot {index}.");
         return false;
     }
-    
-    
+
+    private int GetInsertionIndex(int typeId)
+    {
+        for (int i = currentTiles.Count - 1; i >= 0; i--)
+        {
+            if (currentTiles[i].TileTypeId == typeId)
+                return i + 1;
+        }
+
+        return currentTiles.Count;
+    }
 }

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class TileInteractionHandler : MonoBehaviour
 {
-    [Header("Referências")] 
+    [Header("Referências")]
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask tileLayer;
     [SerializeField] private GameFlowController gameFlow;
@@ -15,31 +15,24 @@ public class TileInteractionHandler : MonoBehaviour
         inputActions = new PlayerControls();
 
         if (mainCamera == null)
-        {
             mainCamera = Camera.main;
-        }
     }
 
     private void OnEnable()
     {
         inputActions.Player.Enable();
-
         inputActions.Player.PrimaryContact.started += OnTouchStarted;
-        //inputActions.Player.PrimaryContact.canceled += OnTouchEnded;
     }
 
     private void OnDisable()
     {
         inputActions.Player.PrimaryContact.started -= OnTouchStarted;
-        //inputActions.Player.PrimaryContact.canceled -= OnTouchEnded;
-        
         inputActions.Player.Disable();
     }
 
-    private void OnTouchStarted(InputAction.CallbackContext ctx)
+    private void OnTouchStarted(InputAction.CallbackContext context)
     {
         Vector2 screenPosition = inputActions.Player.PrimaryPosition.ReadValue<Vector2>();
-        
         DetectTile(screenPosition);
     }
 
@@ -65,5 +58,4 @@ public class TileInteractionHandler : MonoBehaviour
         // Não desabilite o collider aqui.
         gameFlow.TrySelectTile(tile);
     }
-    
 }

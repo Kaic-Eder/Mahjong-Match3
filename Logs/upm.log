@@ -333,3 +333,45 @@ params: {
   "packageId": "com.unity.ide.rider"
 }
 [2026-08-16T21:49:11.801Z][INFO] packages:get-packageinfo --> 200 (656 ms)
+[2026-08-16T22:04:48.296Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T22:04:48.591Z][INFO] project:list-packages --> 200 (295 ms)
+[2026-08-16T22:04:49.081Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T22:04:49.403Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2026-08-16T22:04:49.434Z][INFO] project:list-packages --> 200 (353 ms)
+[2026-08-16T22:04:49.436Z][INFO] config:project:get-registries --> 200 (33 ms)
+[2026-08-16T22:04:51.439Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.ide.rider"
+}
+[2026-08-16T22:04:51.925Z][INFO] packages:get-packageinfo --> 200 (486 ms)
+[2026-08-16T22:06:01.367Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T22:06:01.651Z][INFO] project:list-packages --> 200 (284 ms)
+[2026-08-16T22:06:02.112Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T22:06:02.494Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2026-08-16T22:06:02.512Z][INFO] project:list-packages --> 200 (399 ms)
+[2026-08-16T22:06:02.513Z][INFO] config:project:get-registries --> 200 (19 ms)
+[2026-08-16T22:06:04.455Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.ide.rider"
+}
+[2026-08-16T22:06:04.931Z][INFO] packages:get-packageinfo --> 200 (477 ms)
+[2026-08-16T22:06:58.815Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T22:06:59.148Z][INFO] project:list-packages --> 200 (333 ms)
+[2026-08-16T22:06:59.811Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T22:07:00.599Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2026-08-16T22:07:00.626Z][INFO] config:project:get-registries --> 200 (27 ms)
+[2026-08-16T22:07:01.298Z][INFO] project:list-packages --> 200 (1487 ms)
+[2026-08-16T22:07:03.533Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.ide.rider"
+}
+[2026-08-16T22:07:04.031Z][INFO] packages:get-packageinfo --> 200 (498 ms)
