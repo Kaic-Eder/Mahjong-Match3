@@ -319,3 +319,17 @@ params: {
   "packageId": "com.unity.ide.rider"
 }
 [2026-08-16T21:28:01.496Z][INFO] packages:get-packageinfo --> 200 (485 ms)
+[2026-08-16T21:49:08.216Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T21:49:08.527Z][INFO] project:list-packages --> 200 (311 ms)
+[2026-08-16T21:49:08.911Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-08-16T21:49:09.148Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2026-08-16T21:49:09.159Z][INFO] config:project:get-registries --> 200 (11 ms)
+[2026-08-16T21:49:09.303Z][INFO] project:list-packages --> 200 (392 ms)
+[2026-08-16T21:49:11.145Z][INFO] packages:get-packageinfo <-- Request received
+params: {
+  "packageId": "com.unity.ide.rider"
+}
+[2026-08-16T21:49:11.801Z][INFO] packages:get-packageinfo --> 200 (656 ms)

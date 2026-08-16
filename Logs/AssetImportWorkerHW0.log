@@ -2387,3 +2387,164 @@ Importing 'GUID: 8c9cfa26abfee488c85f1582747f6a02 - Path: Assets/Scenes/SampleSc
 Imported 'GUID: 8c9cfa26abfee488c85f1582747f6a02' -> (Import Result ID: 'daa987cb39fa0ce3b78a8b856807b475') in 0.016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6838ef9caf908e76a8d2ef6c67a319c9 DependenciesID=f9fae0dd1b77903748b712aa2842aa6b StaticDependenciesID=43742f2d1628c7955e9c6d0b236ed041 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 3.98 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (5.9 MB). Loaded Objects now: 8298.
+Memory consumption went from 361.7 MB to 355.8 MB.
+Total: 15.601100 ms (FindLiveObjects: 1.063700 ms CreateObjectMapping: 3.260700 ms MarkObjects: 7.160500 ms  DeleteObjects: 4.114300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-08-16T21:42:25.9648Z
+  Time since last request: 844.7454328 seconds.
+  importAddress: GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: dd2c0f888785d9c479f220bf8003edb3' -> (Import Result ID: '3cc51da19e4c88fb76abb3b29d9e7be8') in 0.023 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=533123252cbfb6707d52de0f5748c615 DependenciesID=79286f89136041c64f20005e0a264fba StaticDependenciesID=bf8191504f2d7903619dcf2d0b2c6070 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 6.66 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (5.4 MB). Loaded Objects now: 8298.
+Memory consumption went from 363.5 MB to 358.1 MB.
+Total: 19.189900 ms (FindLiveObjects: 1.557000 ms CreateObjectMapping: 3.458400 ms MarkObjects: 9.770400 ms  DeleteObjects: 4.402400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-08-16T21:42:59.3855738Z
+  Time since last request: 33.3676263 seconds.
+  importAddress: GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: dd2c0f888785d9c479f220bf8003edb3' -> (Import Result ID: '138fae4b13547a8b5b26e1aff5f5402e') in 0.023 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3f35df86fbfb58f4b2e526be60190fa3 DependenciesID=fec03822fb8252e2bfa7e198827ca393 StaticDependenciesID=6ad564ac68875a027c8ba35e047fb258 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 13.86 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (3.3 MB). Loaded Objects now: 8298.
+Memory consumption went from 363.5 MB to 360.2 MB.
+Total: 35.616300 ms (FindLiveObjects: 1.449900 ms CreateObjectMapping: 5.098300 ms MarkObjects: 14.400200 ms  DeleteObjects: 14.665900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-08-16T21:43:18.2796342Z
+  Time since last request: 18.8503853 seconds.
+  importAddress: GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: dd2c0f888785d9c479f220bf8003edb3' -> (Import Result ID: '6168c089903fba4da5419f9edead47e9') in 0.024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9b476bf568ecdc1ec26c64cf2f86eee9 DependenciesID=894f8dc371339462ab8a0c07c576a4bb StaticDependenciesID=081d9e4cb053d58a690efcc0f44a8afd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 5.15 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (4.8 MB). Loaded Objects now: 8298.
+Memory consumption went from 363.5 MB to 358.7 MB.
+Total: 32.153200 ms (FindLiveObjects: 1.064100 ms CreateObjectMapping: 4.129900 ms MarkObjects: 20.949900 ms  DeleteObjects: 6.007700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-08-16T21:43:34.51602Z
+  Time since last request: 16.1927085 seconds.
+  importAddress: GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: dd2c0f888785d9c479f220bf8003edb3' -> (Import Result ID: '1a00ca61a42cfa4e96a50746b7308f52') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef8bbfff6f5b489435484875754d8d44 DependenciesID=04c529a71d2e0e6c57892a3d121a0c86 StaticDependenciesID=f841814015978d67d67cf804ec520dae 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 4.29 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (6.1 MB). Loaded Objects now: 8298.
+Memory consumption went from 363.5 MB to 357.5 MB.
+Total: 16.466300 ms (FindLiveObjects: 1.158900 ms CreateObjectMapping: 3.071900 ms MarkObjects: 7.379300 ms  DeleteObjects: 4.854500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-08-16T21:45:12.6781111Z
+  Time since last request: 98.1301979 seconds.
+  importAddress: GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: dd2c0f888785d9c479f220bf8003edb3 - Path: Assets/Scripts/TrayAnimator.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: dd2c0f888785d9c479f220bf8003edb3' -> (Import Result ID: '1f9dd4f5c48cb74013db36f8a882c478') in 0.022 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d471b899417ebaa03b8669cfd8e990f8 DependenciesID=90d14fba069b5bc404aeb980d4243752 StaticDependenciesID=4d5a00e1596b8f30e880473788cf2ee8 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+[Licensing::Client] Successfully resolved entitlement details
+Begin MonoManager ReloadAssembly
+Refreshing native plugins compatible for Editor in 3.66 ms, found 5 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.354 seconds
+Domain Reload Profiling: 4030ms
+	BeginReloadAssembly (1196ms)
+		DisableScriptedObjects (32ms)
+		CreateAndSetChildDomain (130ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (82ms)
+	initialDomainReloadingComplete (122ms)
+	LoadAllAssembliesAndSetupDomain (1258ms)
+		LoadAssemblies (1207ms)
+		AnalyzeDomain (449ms)
+			TypeCache.Refresh (16ms)
+			BuildScriptInfoCaches (417ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1355ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			BeforeProcessingInitializeOnLoad (159ms)
+			ProcessInitializeOnLoadAttributes (533ms)
+			ProcessInitializeOnLoadMethodAttributes (209ms)
+			AfterProcessingInitializeOnLoad (16ms)
+		AwakeInstancesAfterBackupRestoration (36ms)
+Refreshing native plugins compatible for Editor in 3.68 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7372 unused Assets / (6.2 MB). Loaded Objects now: 8301.
+Memory consumption went from 364.6 MB to 358.4 MB.
+Total: 16.050500 ms (FindLiveObjects: 1.060700 ms CreateObjectMapping: 2.905400 ms MarkObjects: 7.771100 ms  DeleteObjects: 4.311600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 12.85 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (3.9 MB). Loaded Objects now: 8301.
+Memory consumption went from 366.6 MB to 362.7 MB.
+Total: 206.991800 ms (FindLiveObjects: 1.094000 ms CreateObjectMapping: 15.974800 ms MarkObjects: 18.073700 ms  DeleteObjects: 171.847400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 4.56 ms, found 5 plugins.
+Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7357 unused Assets / (6.3 MB). Loaded Objects now: 8301.
+Memory consumption went from 368.4 MB to 362.1 MB.
+Total: 20.034300 ms (FindLiveObjects: 1.075100 ms CreateObjectMapping: 3.974000 ms MarkObjects: 9.601100 ms  DeleteObjects: 5.382100 ms)
+
+Prepare: number of updated asset objects reloaded= 0

@@ -15,7 +15,6 @@ public class TrayAnimator : MonoBehaviour
     [SerializeField] private float matchDuration = 0.25f;
 
     private Sequence layoutSequence;
-    private Sequence removalSequence;
 
     public Sequence PlayReflow(IReadOnlyList<TileController> tiles)
     {

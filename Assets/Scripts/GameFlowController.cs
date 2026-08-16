@@ -17,6 +17,7 @@ public class GameFlowController : MonoBehaviour
     private readonly MatchFinder matchFinder = new MatchFinder();
 
     public GameState CurrentState => currentState;
+
     public bool CanReceiveInput =>
         currentState != GameState.GameOver &&
         currentState != GameState.Victory;
@@ -26,71 +27,67 @@ public class GameFlowController : MonoBehaviour
         if (!CanReceiveInput)
             return false;
 
+        if (tile == null)
+            return false;
+
         if (!slotManager.TryAddTile(tile))
             return false;
 
+        // Impede que o mesmo tile seja selecionado novamente.
         tile.SetInteractable(false);
 
+        // A lista lógica já foi atualizada.
+        // Agora verifica imediatamente se surgiu um trio.
         if (matchFinder.TryFindMatch(
                 slotManager.CurrentTiles,
                 tile.TileTypeId,
                 matchSize,
                 out List<TileController> match))
         {
-            // A implementação desta separação será a próxima etapa.
             StartMatchRemoval(match);
         }
 
+        // O layout sempre é recalculado depois da seleção.
+        // Se havia um layout anterior, TrayAnimator o cancela.
         trayAnimator.PlayReflow(slotManager.CurrentTiles);
+
         return true;
     }
 
-    private void FinishTileEntry(TileController selectedTile)
+    private void StartMatchRemoval(List<TileController> match)
     {
-        Debug.Log("[Flow] Entrada na barra concluída.");
-
-        if (!matchFinder.TryFindMatch(
-                slotManager.CurrentTiles,
-                selectedTile.TileTypeId,
-                matchSize,
-                out List<TileController> match))
-        {
-            ChangeState(GameState.WaitingForInput);
+        if (match == null || match.Count == 0)
             return;
-        }
 
-        Debug.Log("[Flow] Match encontrado; iniciando animação de remoção.");
+        Debug.Log("[Flow] Match encontrado; iniciando remoção visual.");
         ChangeState(GameState.ResolvingMatch);
 
-        Sequence matchSequence = trayAnimator.PlayMatchRemoval(match);
-        matchSequence.OnComplete(() => FinishMatch(match));
+        // Remove da lista AGORA, antes do reflow.
+        // Os tiles continuam vivos para a animação de saída.
+        slotManager.RemoveTiles(match);
+
+        // Esta é a sequência independente do layout.
+        // Um novo clique pode cancelar o layout, mas não esta remoção.
+        Sequence removalSequence = trayAnimator.PlayMatchRemoval(match);
+
+        removalSequence.OnComplete(() => FinishMatch(match));
     }
 
     private void FinishMatch(List<TileController> match)
     {
-        Debug.Log("[Flow] Animação do match concluída.");
+        Debug.Log("[Flow] Animação do match concluída; destruindo tiles.");
 
-        // Primeiro remove da estrutura lógica.
-        slotManager.RemoveTiles(match);
-
-        // Depois remove os objetos da cena.
+        // Este é o lugar correto para Destroy.
+        // O callback só chegou aqui depois do fim da animação.
         foreach (TileController tile in match)
         {
             if (tile != null)
                 Destroy(tile.gameObject);
         }
 
-        ChangeState(GameState.ReflowingTray);
-
-        // Agora somente os sobreviventes são reposicionados.
-        Sequence reflowSequence = trayAnimator.PlayReflow(slotManager.CurrentTiles);
-        reflowSequence.OnComplete(FinishReflow);
-    }
-
-    private void FinishReflow()
-    {
-        Debug.Log("[Flow] Reflow concluído; input liberado.");
-        ChangeState(GameState.WaitingForInput);
+        // Não removemos da lista aqui: isso já aconteceu em StartMatchRemoval.
+        // Não iniciamos outro reflow aqui: ele já foi iniciado imediatamente
+        // depois de TrySelectTile detectar o match.
     }
 
     private void ChangeState(GameState nextState)

@@ -84,50 +84,5 @@ public class SlotManager : MonoBehaviour
         return false;
     }
     
-    /*private void UpdateTilePositions()
-    {
-        for (int i = 0; i < currentTiles.Count; i++)
-        {
-            // Move instantaneamente para o slot correto (depois faremos a animação)
-            float duration = Vector3.Distance(currentTiles[i].transform.position, slotPositions[i].position)/velocidadeMovimento;
-            currentTiles[i].transform.DOMove(slotPositions[i].transform.position, duration).SetEase(Ease.Linear);
-        }
-    }
-
-    /// <summary>
-    /// Verifica se há 3 peças do mesmo tipo e processa o Match.
-    /// </summary>
-    private void CheckForMatch(int typeId)
-    {
-        // Lista temporária para guardar os tiles correspondentes ao match
-        List<TileController> matchingTiles = new List<TileController>();
-
-        foreach (var t in currentTiles)
-        {
-            if (t.TileTypeId == typeId)
-            {
-                matchingTiles.Add(t);
-            }
-        }
-
-        // Se encontramos 3 peças do mesmo tipo!
-        if (matchingTiles.Count >= 3)
-        {
-            Debug.Log($"<color=green>MATCH! 3 peças do tipo {typeId} combinadas!</color>");
-
-            // 1. Remove os 3 tiles da nossa lista lógica
-            foreach (var tileToRemove in matchingTiles)
-            {
-                currentTiles.Remove(tileToRemove);
-                
-                // 2. Destrói o GameObject da cena
-                Destroy(tileToRemove.gameObject);
-            }
-
-            // 3. Reorganiza os tiles que sobraram na barra
-            UpdateTilePositions();
-        }
-    }*/
-    
     
 }
