@@ -5,12 +5,16 @@ public class TileController : MonoBehaviour
 {
     [Header("Identidade")]
     [SerializeField] private int tileTypeId;
+    [SerializeField] private int boardCellIndex = -1;
+    [SerializeField] private int boardLayer;
 
     [Header("Referências locais")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Collider2D tileCollider;
 
     public int TileTypeId => tileTypeId;
+    public int BoardCellIndex => boardCellIndex;
+    public int BoardLayer => boardLayer;
 
     private void Awake()
     {
@@ -19,20 +23,29 @@ public class TileController : MonoBehaviour
 
         if (tileCollider == null)
             tileCollider = GetComponent<Collider2D>();
+    }
 
-        // Mantém a lógica que já existe no seu projeto.
-        // Mais adiante, você poderá substituir isso por TileDefinition.
-        if (spriteRenderer != null && spriteRenderer.sprite != null)
+    /// <summary>
+    /// Configura o tile depois que ele foi instanciado pelo BoardSpawner.
+    /// O tipo deixa de depender do nome do arquivo do sprite.
+    /// </summary>
+    public void Initialize(
+        int typeId,
+        Sprite sprite,
+        int cellIndex,
+        int layer)
+    {
+        tileTypeId = typeId;
+        boardCellIndex = cellIndex;
+        boardLayer = layer;
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
         {
-            string spriteName = spriteRenderer.sprite.name;
-            string numericPart = spriteName.Remove(0, 6);
-
-            if (!int.TryParse(numericPart, out tileTypeId))
-            {
-                Debug.LogError(
-                    $"Não foi possível descobrir o tipo do tile pelo sprite {spriteName}.",
-                    this);
-            }
+            spriteRenderer.sprite = sprite;
+            spriteRenderer.sortingOrder = layer * 10;
         }
     }
 
@@ -46,7 +59,6 @@ public class TileController : MonoBehaviour
     {
         SetInteractable(false);
 
-        // Comece apenas com escala. Depois você pode incluir DOFade.
         return transform
             .DOScale(Vector3.zero, duration)
             .SetEase(Ease.InBack);

@@ -7,7 +7,8 @@ public class GameFlowController : MonoBehaviour
     [Header("Referências")]
     [SerializeField] private SlotManager slotManager;
     [SerializeField] private TrayAnimator trayAnimator;
-
+    [SerializeField] private BoardController boardController;
+    
     [Header("Regras")]
     [SerializeField] private int matchSize = 3;
 
@@ -35,6 +36,10 @@ public class GameFlowController : MonoBehaviour
 
         // O tile selecionado não deve poder ser selecionado novamente.
         tile.SetInteractable(false);
+        if (boardController != null)
+        {
+            boardController.NotifyTileSelected(tile);
+        }
 
         ChangeState(GameState.MovingTileToTray);
 
